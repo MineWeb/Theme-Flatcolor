@@ -14,7 +14,7 @@
     <?= $this->Html->css('bootstrap.css') ?>
     <?= $this->Html->css('flatcolor.css') ?>
     <?= $this->Html->css('swiper.min.css') ?>
-	  <?= $this->Html->css('../font-awesome-4.1.0/css/font-awesome.min.css') ?>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- CSS Config -->
     <?php if (isset($theme_config['theme']) && $theme_config['theme'] != "")

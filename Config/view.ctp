@@ -78,7 +78,7 @@ if(isset($config['logo']) && $config['logo']) {
                   <label>Statut du serveur amélioré</label>
                 </div>
               </div>
-              <div class="form-group" id="ip" <?= ($config['status'] != 'true' ? '' : 'style="display:none"') ?>
+              <div class="form-group" id="ip" <?= ($config['status'] != 'true' ? '' : 'style="display:none"') ?>>
                 <label>IP affichée</label>
                 <input type="text" class="form-control" name="ip" value="<?= $config['ip'] ?>">
               </div>
