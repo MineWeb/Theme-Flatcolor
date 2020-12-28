@@ -1,3 +1,33 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@StanByes 
+MineWeb
+/
+Theme-Flatcolor
+0
+01
+Code
+Issues
+Pull requests
+1
+Actions
+Wiki
+Security
+Insights
+Theme-Flatcolor/Elements/modals.ctp /
+@nivcoo
+nivcoo Update theme
+Latest commit 51d4ed0 on 15 Oct 2018
+ History
+ 1 contributor
+216 lines (205 sloc)  11 KB
+  
 <!-- Modal (connexion ...) -->
 <div class="modal modal-medium fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -138,31 +168,32 @@
               <input type="email" class="form-control" name="email" placeholder="<?= $Lang->get('USER__EMAIL_LABEL') ?>">
             </div>
           </div>
-          <?php if($reCaptcha['type'] == "google") { ?>
-            <script src='https://www.google.com/recaptcha/api.js'></script>
-            <div class="form-group">
-              <label class="col-sm-2 control-label"><?= $Lang->get('FORM__CAPTCHA') ?></label>
-              <div class="col-sm-10">
-                <div class="g-recaptcha" data-sitekey="<?= $reCaptcha['siteKey'] ?>"></div>
-              </div>
+          <?php if($captcha['type'] == "google") { ?>
+                <script src='https://www.google.com/recaptcha/api.js'></script>
+                <div class="form-group">
+                    <h5><?= $Lang->get('FORM__CAPTCHA') ?></h5>
+                    <div class="g-recaptcha" data-sitekey="<?= $captcha['siteKey'] ?>"></div>
+                </div>
+
+              <?php } else if($captcha['type'] == "hcaptcha") { ?>
+                  <script src='https://www.hCaptcha.com/1/api.js' async defer></script>
+                  <div class="form-group">
+                      <h5><?= $Lang->get('FORM__CAPTCHA') ?></h5>
+                      <div class="h-captcha" data-sitekey="<?= $captcha['siteKey'] ?>"></div>
+                  </div>
+              <?php } else { ?>
+                <div class="form-group">
+                    <h5><?= $Lang->get('FORM__CAPTCHA') ?></h5>
+                    <?php
+                      echo $this->Html->image(array('controller' => 'user', 'action' => 'get_captcha', 'plugin' => false, 'admin' => false), array('plugin' => false, 'admin' => false, 'id' => 'captcha_image'));
+                      echo $this->Html->link($Lang->get('FORM__RELOAD_CAPTCHA'), 'javascript:void(0);',array('id' => 'reload'));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="captcha" id="inputPassword3" placeholder="<?= $Lang->get('FORM__CAPTCHA_LABEL') ?>">
+                </div>
+              <?php } ?>
             </div>
-          <?php } else { ?>
-            <div class="form-group">
-              <label for="inputPassword3" class="col-sm-2 control-label"><?= $Lang->get('FORM__CAPTCHA') ?></label>
-              <div class="col-sm-10">
-                <?php
-                  echo $this->Html->image(array('controller' => 'user', 'action' => 'get_captcha', 'plugin' => false, 'admin' => false), array('plugin' => false, 'admin' => false, 'id' => 'captcha_image'));
-                  echo $this->Html->link($Lang->get('FORM__RELOAD_CAPTCHA'), 'javascript:void(0);',array('id' => 'reload'));
-                ?>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="col-sm-2 control-label"></label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" name="captcha" id="inputPassword3" placeholder="<?= $Lang->get('FORM__CAPTCHA_LABEL') ?>">
-              </div>
-            </div>
-          <?php } ?>
           <?php if (!empty($condition)) { ?>
 		  <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
