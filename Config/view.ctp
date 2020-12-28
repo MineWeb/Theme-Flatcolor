@@ -104,10 +104,6 @@ if(isset($config['logo']) && $config['logo']) {
               </script>
 
               <div class="form-group">
-                <label><?= $Lang->get('THEME__FAVICON_URL') ?></label>
-                <input type="text" class="form-control" name="favicon_url" value="<?= $config['favicon_url'] ?>">
-              </div>
-              <div class="form-group">
                 <label>URL du fond du Header</label>
                 <input type="text" class="form-control" name="header_url" value="<?= $config['header_url'] ?>">
               </div>
