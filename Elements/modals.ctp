@@ -1,33 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@StanByes 
-MineWeb
-/
-Theme-Flatcolor
-0
-01
-Code
-Issues
-Pull requests
-1
-Actions
-Wiki
-Security
-Insights
-Theme-Flatcolor/Elements/modals.ctp /
-@nivcoo
-nivcoo Update theme
-Latest commit 51d4ed0 on 15 Oct 2018
- History
- 1 contributor
-216 lines (205 sloc)  11 KB
-  
 <!-- Modal (connexion ...) -->
 <div class="modal modal-medium fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
   <div class="modal-dialog">
